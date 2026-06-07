@@ -1,0 +1,7 @@
+function sendDoneStatus(callback: (message: string) => void): void {
+  callback("done");
+}
+
+// Завдання:
+
+// Типізуйте параметр callback, щоб це була функція, яка приймає рядок і повертав void.

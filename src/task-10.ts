@@ -1,9 +1,17 @@
-const users = ["alice", "bob", "charlie"];
-
-function toUserObjects() {}
+const users: string[] = ["alice", "bob", "charlie"];
+interface User {
+  id: number;
+  name: string;
+}
+function toUserObjects(users: string[]): User[] {
+  return users.map((item, i) => {
+    return { id: i + 1, name: item };
+  });
+}
 // Завдання:
 
-// 1. Створіть типізовану функцію toUserObjects, яка приймає масив рядків (імен користувачів).
+// 1. Створіть типізовану функцію toUserObjects, яка приймає масив рядків
+//  (імен користувачів).
 
 // 2. Усередині функції переберіть масив імен та для кожного імені створи об’єкт з
 // такими властивостями:
@@ -17,6 +25,6 @@ function toUserObjects() {}
 
 // Приклад виклику:
 
-// toUserObjects(users);
+toUserObjects(users);
 // Повертає: [{ id: 1, name: "alice" }, { id: 2, name: "bob" },
 //  { id: 3, name: "charlie" }]
